@@ -88,7 +88,7 @@ function Cards() {
               <Button
                 style={{ marginTop: "35px" }}
                 variant="outlined"
-                href="#outlined-buttons"
+          
                 onClick={() => {
                   goToPage("https://react-library-tau.vercel.app/");
                 }}
@@ -153,7 +153,7 @@ function Cards() {
               <Button
                 style={{ marginTop: "15px" }}
                 variant="outlined"
-                href="#outlined-buttons"
+      
                 onClick={() => {
                   goToPage("https://todo-list-4bhu.vercel.app/");
                 }}
