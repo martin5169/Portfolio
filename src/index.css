@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+
+:root {
+  font-family: Roboto;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+a {
+  font-weight: 500;
+  color: whitesmoke;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #646cff;
+  opacity: 0.9; 
+}
+
+.Button:hover{
+  color: red;
+  opacity: 0.9; 
+}
+
+
+.card-zoom:hover {
+  transform: scale(1.08);
+  transition: transform 0.3s ease; 
+}
+
+.tecnologias{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+}
+
+h1 {
+  margin-top: 80px;
+  font-size: 2.8em;
+}
+h2 {
+  color:  #646cff;
+  font-size: 2.5em;
+  line-height: 1.1;
+}
+h3{
+  font-size: 2.2em;
+  opacity: .8;
+}
+
+.name{
+  margin-top: 20px;
+  display: grid;
+  justify-self: left;
+  padding:.9rem .5rem ;
+}
+
+.bg-body-tertiary {
+  display: flex;
+  align-items: center; 
+  padding: 5px 15px;
+  background-color: rgba(116, 123, 255, 0.8);
+  
+}
+
+.iconos {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  gap: 15px;
+}
+
+
+#root {
+  margin: auto;
+  padding: 0.5rem;
+  text-align: center;
+}
+.projects{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  
+}
+
+.skills{
+  margin-top: 50px;
+ 
+}
+.aboutMe{
+  background-color: #747bff;
+  color: whitesmoke;
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 30px;
+
+}
+
+.aboutMe h2{
+  color: whitesmoke;
+  margin-top: 10px;
+}
+.aboutMe p{
+  margin-bottom: 40px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #242526;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+

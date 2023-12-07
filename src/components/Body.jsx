@@ -1,0 +1,84 @@
+import {
+  IconBrandHtml5,
+  IconBrandReact,
+  IconFileDownload,
+} from "@tabler/icons-react";
+import { Button, Tooltip } from "@mui/material";
+import Navbar from "react-bootstrap/Navbar";
+import "aos/dist/aos.css";
+import Container from "react-bootstrap/Container";
+import {
+  IconBrandMysql,
+  IconBrandKotlin,
+  IconBrandJavascript,
+  IconBrandCss3,
+  IconBrandLinkedin,
+  IconBrandGithubFilled,
+  IconBrandVue,
+} from "@tabler/icons-react";
+import { useSelector } from 'react-redux';
+
+function Body() {
+  const selectedLanguage = useSelector((state) => state.language);
+
+  return (
+    <div className="name">
+      <h1>{selectedLanguage === 'es' ? "Hola, soy Ignacio M. Commisso" : "Hi, I'm Ignacio Commisso" }</h1>
+      <h3>{selectedLanguage === 'es' ? 'Desarrollador Fullstack' : "Fullstack Developer"}</h3>
+      <Container className="iconos">
+        <Navbar.Brand href="https://www.linkedin.com/in/ignacio-martin-commisso-b9675b278/">
+          <IconBrandLinkedin size={40}></IconBrandLinkedin>
+        </Navbar.Brand>
+        <Navbar.Brand href="https://github.com/martin5169">
+          <IconBrandGithubFilled size={40}></IconBrandGithubFilled>
+        </Navbar.Brand>
+      </Container>
+
+      <div className="aboutMe">
+      <h2>{selectedLanguage === 'es' ? 'Sobre mí' : "About me"}</h2>
+        <p>
+          Analista de sistemas recién graduado en la universidad ORT Argentina,
+          con muchas ganas de dar mis primeros pasos en el mundo IT. Me encanta
+          resolver problemas y afrontar nuevos retos. Soy proactivo,
+          perseverante y adaptable.
+        </p>
+        <Button
+          variant="outlined"
+          color="inherit"
+          href="https://drive.google.com/file/d/1ORXPBISgZPwhl0CcfBvg6Cp9g3xx6lKF/view?usp=sharing"
+          startIcon={<IconFileDownload size={30} />}
+        >
+          {selectedLanguage === 'es' ? 'VER CV' : "VIEW RESUME"}
+        </Button>
+      </div>
+
+      <div className="skills">
+        <h2>Skills</h2>
+
+        <Tooltip title="HTML5">
+          <IconBrandHtml5 width={64} height={64} color="currentColor" />
+        </Tooltip>
+        <Tooltip title="CSS">
+          <IconBrandCss3 width={64} height={64} />
+        </Tooltip>
+        <Tooltip title="JavaScript">
+          <IconBrandJavascript width={64} height={64} />
+        </Tooltip>
+        <Tooltip title="React">
+          <IconBrandReact width={64} height={64} />
+        </Tooltip>
+        <Tooltip title="Vue.js">
+          <IconBrandVue width={64} height={64} />
+        </Tooltip>
+        <Tooltip title="MySQL">
+          <IconBrandMysql width={64} height={64} />
+        </Tooltip>
+        <Tooltip title="Kotlin">
+          <IconBrandKotlin width={64} height={64} />
+        </Tooltip>
+      </div>
+    </div>
+  );
+}
+
+export default Body;
