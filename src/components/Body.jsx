@@ -33,15 +33,17 @@ function Body() {
           <IconBrandGithubFilled size={40}></IconBrandGithubFilled>
         </Navbar.Brand>
       </Container>
+      <div className="imagen">
+        <img src="../public/pc.png" alt="pc" />
+      </div>
 
       <div className="aboutMe">
       <h2>{selectedLanguage === 'es' ? 'Sobre mí' : "About me"}</h2>
         <p>
-          Analista de sistemas recién graduado en la universidad ORT Argentina,
-          con muchas ganas de dar mis primeros pasos en el mundo IT. Me encanta
-          resolver problemas y afrontar nuevos retos. Soy proactivo,
-          perseverante y adaptable.
+          {selectedLanguage=="es"?"Analista de sistemas recién graduado en la universidad ORT Argentina,con muchas ganas de dar mis primeros pasos en el mundo IT. Me encanta resolver problemas y afrontar nuevos retos. Soy proactivo,perseverante y adaptable." :
+          "Systems analyst recently graduated from the ORT University in Argentina, eager to take my first steps in the IT world. I love solving problems and taking on new challenges. I am proactive, persevering and adaptable."}
         </p>
+        
         <Button
           variant="outlined"
           color="inherit"
@@ -53,7 +55,7 @@ function Body() {
       </div>
 
       <div className="skills">
-        <h2>Skills</h2>
+        <h2>{selectedLanguage === 'es' ? 'Habilidades' : "Skills"}</h2>
 
         <Tooltip title="HTML5">
           <IconBrandHtml5 width={64} height={64} color="currentColor" />

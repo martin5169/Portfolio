@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from 'react-redux';
 import { useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -9,6 +10,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 function Cards() {
+  
+  const selectedLanguage = useSelector((state) => state.language);
   const goToPage = (url) => {
     window.open(url, "_blank");
   };
@@ -24,7 +27,7 @@ function Cards() {
 
   return (
     <>
-      <h2>Projects</h2>
+      <h2>{selectedLanguage === 'es' ? 'Proyectos' : "Projects"}</h2>
       <div
         className="projects"
         data-aos="zoom-in-up"
@@ -41,7 +44,7 @@ function Cards() {
             <CardMedia
               component="img"
               height="140"
-              image="./src/assets/library.jpg"
+              image="../public/library.jpg"
               alt="Library"
             />
             <Stack direction="row" spacing={1} gap={1} className="tecnologias">
@@ -82,8 +85,8 @@ function Cards() {
                 Library
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Aplicación web que permite a los usuarios crear y gestionar sus
-                listas de lectura, con persistencia.
+              {selectedLanguage === 'es' ? ' Aplicación web que permite a los usuarios crear y gestionar sus listas de lectura, con persistencia.' : ' Web application that allows users to create and manage their reading lists, with persistence.'}
+        
               </Typography>
               <Button
                 style={{ marginTop: "35px" }}
@@ -93,7 +96,7 @@ function Cards() {
                   goToPage("https://react-library-tau.vercel.app/");
                 }}
               >
-                Visitar
+                {selectedLanguage === 'es' ? 'IR' : "GO"}
               </Button>
             </CardContent>
           </CardActionArea>
@@ -107,7 +110,7 @@ function Cards() {
             <CardMedia
               component="img"
               height="140"
-              image="./src/assets/todo-list.jpg"
+              image="../public/todo-list.jpg"
               alt="Library"
             />
             <Stack direction="row" spacing={1} gap={1} className="tecnologias">
@@ -148,8 +151,8 @@ function Cards() {
                 ToDoList
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Aplicación web que permite utilizar una lista de tareas, con la posibilidad de ser filtradas por estados.
-              </Typography>
+              {selectedLanguage === 'es' ? '   Aplicación web que permite utilizar una lista de tareas, con la posibilidad de ser filtradas por estados.' : ' Web application that allows you to use a list of tasks, with the possibility of filtering them by status.'}
+               </Typography>
               <Button
                 style={{ marginTop: "15px" }}
                 variant="outlined"
@@ -158,7 +161,7 @@ function Cards() {
                   goToPage("https://todo-list-4bhu.vercel.app/");
                 }}
               >
-                Visitar
+                 {selectedLanguage === 'es' ? 'IR' : "GO"}
               </Button>
             </CardContent>
           </CardActionArea>
