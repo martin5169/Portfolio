@@ -12,8 +12,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLanguage } from '../redux/actions';
-import spainFlag from '/public/spain.svg';
-import ukFlag from '/public/ukFlag.png'
+
 import { Link } from 'react-router-dom';
 
 function Navigation() {
@@ -88,10 +87,10 @@ function Navigation() {
       <Stack direction="row" spacing={1} alignItems="center" >
      
         <Typography>EN</Typography>
-        <img src={ukFlag} height={13} alt="UK Flag" />
+        <img src="/ukflag.png" height={13} alt="UK Flag" />
         <AntSwitch checked={selectedLanguage === 'es'} inputProps={{ 'aria-label': 'ant design' }}  onChange={toggleLanguage} />
         <Typography>ES</Typography>
-        <img src={spainFlag} height={23} alt="Spain Flag" />
+        <img src="/spain.svg" height={23} alt="Spain Flag" />
         </Stack>
         </div>
       
