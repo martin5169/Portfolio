@@ -44,7 +44,7 @@ function Cards() {
             <CardMedia
               component="img"
               height="140"
-              image="/public/library.jpg"
+              image="/library.jpg"
               alt="Library"
             />
             <Stack direction="row" spacing={1} gap={1} className="tecnologias">
@@ -110,7 +110,7 @@ function Cards() {
             <CardMedia
               component="img"
               height="140"
-              image="/public/todo-list.jpg"
+              image="/todo-list.jpg"
               alt="Library"
             />
             <Stack direction="row" spacing={1} gap={1} className="tecnologias">
