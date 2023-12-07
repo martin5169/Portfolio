@@ -12,8 +12,8 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLanguage } from '../redux/actions';
-import spainFlag from '/public/spain.svg';
-import ukFlag from '/public/ukFlag.png'
+import spainFlag from '/public/static/spain.svg';
+import ukFlag from '/public/static/ukFlag.png'
 import { Link } from 'react-router-dom';
 
 function Navigation() {

@@ -34,7 +34,7 @@ function Body() {
         </Navbar.Brand>
       </Container>
       <div className="imagen">
-        <img src="../public/pc.png" alt="pc" />
+        <img src="/public/static/pc.png" alt="pc" />
       </div>
 
       <div className="aboutMe">
