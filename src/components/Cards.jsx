@@ -151,7 +151,7 @@ function Cards() {
                 ToDoList
               </Typography>
               <Typography variant="body2" color="text.secondary">
-              {selectedLanguage === 'es' ? '   Aplicación web que permite utilizar una lista de tareas, con la posibilidad de ser filtradas por estados.' : ' Web application that allows you to use a list of tasks, with the possibility of filtering them by status.'}
+              {selectedLanguage === 'es' ? '   Aplicación web que permite crear una lista de tareas, con la posibilidad de ser filtradas por estados.' : ' Web application that allows you to create a list of tasks, with the possibility of filtering them by status.'}
                </Typography>
               <Button
                 style={{ marginTop: "15px" }}
@@ -159,6 +159,63 @@ function Cards() {
       
                 onClick={() => {
                   goToPage("https://todo-list-4bhu.vercel.app/");
+                }}
+              >
+                 {selectedLanguage === 'es' ? 'IR' : "GO"}
+              </Button>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+        <Card
+          sx={{ maxWidth: 250 }}
+          style={{ backgroundColor: "whitesmoke" }}
+          className="card-zoom"
+        >
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="140"
+              image="/pptijera.jpg"
+              alt="pptijera"
+            />
+            <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+              <Chip
+                label="React"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
+
+              <Chip
+                label="CSS"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
+                 <Chip
+                label="Bootstrap"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
+
+            </Stack>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+              {selectedLanguage === 'es' ? 'Piedra, papel o tijera' : 'Rock, Paper, Scissors '}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+              {selectedLanguage === 'es' ? 'Pequeña recreación online del clásico juego.' : 'Small online recreation of the classic game.'}
+               </Typography>
+              <Button
+                style={{ marginTop: "85px" }}
+                variant="outlined"
+      
+                onClick={() => {
+                  goToPage("https://piedra-papel-tijera-kohl.vercel.app/");
                 }}
               >
                  {selectedLanguage === 'es' ? 'IR' : "GO"}

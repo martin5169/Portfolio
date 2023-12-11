@@ -12,7 +12,6 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLanguage } from '../redux/actions';
-
 import { Link } from 'react-router-dom';
 
 function Navigation() {
@@ -37,7 +36,7 @@ function Navigation() {
 
   const AntSwitch = styled(Switch)(({ theme }) => ({
     width: 28,
-    height: 16,
+    height: 18,
     padding: 0,
     display: 'flex',
     '&:active': {
@@ -55,7 +54,7 @@ function Navigation() {
         color: '#fff',
         '& + .MuiSwitch-track': {
           opacity: 1,
-          backgroundColor: theme.palette.mode === 'dark' ? '#177ddc' : '#1890ff',
+          backgroundColor: theme.palette.mode === 'dark' ? '#190ddc' : '#1890ff',
         },
       },
     },
@@ -88,7 +87,7 @@ function Navigation() {
      
         <Typography>EN</Typography>
         <img src="/ukflag.png" height={13} alt="UK Flag" />
-        <AntSwitch checked={selectedLanguage === 'es'} inputProps={{ 'aria-label': 'ant design' }}  onChange={toggleLanguage} />
+        <AntSwitch checked={selectedLanguage === 'es'} inputProps={{ 'aria-label': 'ant design' }}  onChange={toggleLanguage}  />
         <Typography>ES</Typography>
         <img src="/spain.svg" height={23} alt="Spain Flag" />
         </Stack>

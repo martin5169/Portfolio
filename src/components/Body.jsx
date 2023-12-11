@@ -1,6 +1,8 @@
 import {
   IconBrandHtml5,
+  IconBrandNodejs,
   IconBrandReact,
+  IconBrandTailwind,
   IconFileDownload,
 } from "@tabler/icons-react";
 import { Button, Tooltip } from "@mui/material";
@@ -23,8 +25,8 @@ function Body() {
 
   return (
     <div className="name">
-      <h1>{selectedLanguage === 'es' ? "Hola, soy Ignacio M. Commisso" : "Hi, I'm Ignacio Commisso" }</h1>
-      <h3>{selectedLanguage === 'es' ? 'Desarrollador Fullstack' : "Fullstack Developer"}</h3>
+      <h1>{selectedLanguage === 'es' ? "Hola, soy Ignacio Martin Commisso" : "Hi, I'm Ignacio Martin Commisso" }</h1>
+      <h3>{selectedLanguage === 'es' ? 'Analista de Sistemas' : "Systems Analyst"}</h3>
       <Container className="iconos">
         <Navbar.Brand href="https://www.linkedin.com/in/ignacio-martin-commisso-b9675b278/">
           <IconBrandLinkedin size={40}></IconBrandLinkedin>
@@ -39,7 +41,7 @@ function Body() {
 
       <div className="aboutMe">
       <h2>{selectedLanguage === 'es' ? 'Sobre mí' : "About me"}</h2>
-        <p>
+        <p className="aboutText">
           {selectedLanguage=="es"?"Analista de sistemas recién graduado en la universidad ORT Argentina,con muchas ganas de dar mis primeros pasos en el mundo IT. Me encanta resolver problemas y afrontar nuevos retos. Soy proactivo,perseverante y adaptable." :
           "Systems analyst recently graduated from the ORT University in Argentina, eager to take my first steps in the IT world. I love solving problems and taking on new challenges. I am proactive, persevering and adaptable."}
         </p>
@@ -74,6 +76,12 @@ function Body() {
         </Tooltip>
         <Tooltip title="MySQL">
           <IconBrandMysql width={64} height={64} />
+        </Tooltip>
+         <Tooltip title="Tailwind">
+          <IconBrandTailwind width={64} height={64} />
+        </Tooltip>
+        <Tooltip title="NodeJs">
+          <IconBrandNodejs width={64} height={64} />
         </Tooltip>
         <Tooltip title="Kotlin">
           <IconBrandKotlin width={64} height={64} />

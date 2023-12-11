@@ -24,12 +24,6 @@ a:hover {
   opacity: 0.9; 
 }
 
-.Button:hover{
-  color: red;
-  opacity: 0.9; 
-}
-
-
 .card-zoom:hover {
   transform: scale(1.08);
   transition: transform 0.3s ease; 
@@ -100,6 +94,9 @@ h3{
 .skills{
   margin-top: 50px;
  
+}
+.aboutText{
+ font-size: 20px;
 }
 .aboutMe{
   background-color: #747bff;
