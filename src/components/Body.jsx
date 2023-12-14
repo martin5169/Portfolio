@@ -49,7 +49,7 @@ function Body() {
         <Button
           variant="outlined"
           color="inherit"
-          href="https://drive.google.com/file/d/1ORXPBISgZPwhl0CcfBvg6Cp9g3xx6lKF/view?usp=sharing"
+          href="https://drive.google.com/file/d/1xugWJ5BOa0hF-tIwjfw-oX1MrlR4XpZ-/view?usp=sharing"
           startIcon={<IconFileDownload size={30} />}
         >
           {selectedLanguage === 'es' ? 'VER CV' : "VIEW RESUME"}
