@@ -93,6 +93,9 @@ h3{
 
 .skills{
   margin-top: 50px;
+  justify-content: center;
+  align-items: center; 
+  gap: 15px;
  
 }
 .aboutText{

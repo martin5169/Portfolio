@@ -1,8 +1,4 @@
 import {
-  IconBrandHtml5,
-  IconBrandNodejs,
-  IconBrandReact,
-  IconBrandTailwind,
   IconFileDownload,
 } from "@tabler/icons-react";
 import { Button, Tooltip } from "@mui/material";
@@ -10,13 +6,8 @@ import Navbar from "react-bootstrap/Navbar";
 import "aos/dist/aos.css";
 import Container from "react-bootstrap/Container";
 import {
-  IconBrandMysql,
-  IconBrandKotlin,
-  IconBrandJavascript,
-  IconBrandCss3,
   IconBrandLinkedin,
   IconBrandGithubFilled,
-  IconBrandVue,
 } from "@tabler/icons-react";
 import { useSelector } from 'react-redux';
 
@@ -58,33 +49,38 @@ function Body() {
 
       <div className="skills">
         <h2>{selectedLanguage === 'es' ? 'Habilidades' : "Skills"}</h2>
-
         <Tooltip title="HTML5">
-          <IconBrandHtml5 width={64} height={64} color="currentColor" />
+        <img src="./html5.svg" width={64} height={64} style={{ margin: 10 }}/>
         </Tooltip>
         <Tooltip title="CSS">
-          <IconBrandCss3 width={64} height={64} />
+        <img src="./css.svg" width={64} height={64} style={{ margin: 10 }}/>
         </Tooltip>
-        <Tooltip title="JavaScript">
-          <IconBrandJavascript width={64} height={64} />
+        <Tooltip title="Tailwind">
+        <img src="./tailwindcss.svg" width={64} height={64} style={{ margin: 10 }}/>
         </Tooltip>
-        <Tooltip title="React">
-          <IconBrandReact width={64} height={64} />
-        </Tooltip>
-        <Tooltip title="Vue.js">
-          <IconBrandVue width={64} height={64} />
-        </Tooltip>
-        <Tooltip title="MySQL">
-          <IconBrandMysql width={64} height={64} />
-        </Tooltip>
-         <Tooltip title="Tailwind">
-          <IconBrandTailwind width={64} height={64} />
+        <Tooltip title="Javascript">
+          <img src="./javascript.svg" width={64} height={64} style={{ margin: 10 }}/>
         </Tooltip>
         <Tooltip title="NodeJs">
-          <IconBrandNodejs width={64} height={64} />
+        <img src="./nodejs.svg" width={64} height={64} style={{ margin: 10 }}/>
+        </Tooltip>
+        <Tooltip title="React">
+        <img src="./react.svg" width={64} height={64} style={{ margin: 10 }}/>
+        </Tooltip>
+        <Tooltip title="Vue.js">
+        <img src="./vue.svg" width={64} height={64} style={{ margin: 10 }}/>
+        </Tooltip>
+        <Tooltip title="JAVA">
+          <img src="./java.svg" width={64} height={64} style={{ margin: 10 }}/>
+        </Tooltip>
+        <Tooltip title="MySql">
+          <img src="./mysql.svg" width={64} height={64} style={{ margin: 10 }}/>
+        </Tooltip>
+        <Tooltip title="SQLserver">
+          <img src="./sql-server.svg" width={64} height={64} style={{ margin: 10 }}/>
         </Tooltip>
         <Tooltip title="Kotlin">
-          <IconBrandKotlin width={64} height={64} />
+          <img src="./kotlin.svg" width={64} height={64} style={{ margin: 10 }}/>
         </Tooltip>
       </div>
     </div>

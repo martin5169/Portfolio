@@ -86,7 +86,7 @@ function Navigation() {
       <Stack direction="row" spacing={1} alignItems="center" >
      
         <Typography>EN</Typography>
-        <img src="/ukflag.png" height={13} alt="UK Flag" />
+        <img src="/ukflag.png" height={17} alt="UK Flag" />
         <AntSwitch checked={selectedLanguage === 'es'} inputProps={{ 'aria-label': 'ant design' }}  onChange={toggleLanguage}  />
         <Typography>ES</Typography>
         <img src="/spain.svg" height={23} alt="Spain Flag" />
