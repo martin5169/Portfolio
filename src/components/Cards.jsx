@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -10,7 +10,6 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 function Cards() {
-  
   const selectedLanguage = useSelector((state) => state.language);
   const goToPage = (url) => {
     window.open(url, "_blank");
@@ -27,7 +26,7 @@ function Cards() {
 
   return (
     <>
-      <h2>{selectedLanguage === 'es' ? 'Proyectos' : "Projects"}</h2>
+      <h2>{selectedLanguage === "es" ? "Proyectos" : "Projects"}</h2>
       <div
         className="projects"
         data-aos="zoom-in-up"
@@ -50,6 +49,13 @@ function Cards() {
             <Stack direction="row" spacing={1} gap={1} className="tecnologias">
               <Chip
                 label="React"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
+              <Chip
+                label="JavaScript"
                 color="primary"
                 variant="outlined"
                 size="small"
@@ -85,18 +91,18 @@ function Cards() {
                 Library
               </Typography>
               <Typography variant="body2" color="text.secondary">
-              {selectedLanguage === 'es' ? ' Aplicación web que permite a los usuarios crear y gestionar sus listas de lectura, con persistencia.' : ' Web application that allows users to create and manage their reading lists, with persistence.'}
-        
+                {selectedLanguage === "es"
+                  ? " Aplicación web que permite a los usuarios crear y gestionar sus listas de lectura, con persistencia."
+                  : " Web application that allows users to create and manage their reading lists, with persistence."}
               </Typography>
               <Button
                 style={{ marginTop: "35px" }}
                 variant="outlined"
-          
                 onClick={() => {
                   goToPage("https://react-library-tau.vercel.app/");
                 }}
               >
-                {selectedLanguage === 'es' ? 'IR' : "GO"}
+                {selectedLanguage === "es" ? "IR" : "GO"}
               </Button>
             </CardContent>
           </CardActionArea>
@@ -121,7 +127,13 @@ function Cards() {
                 size="small"
                 className="pillTecnologias"
               />
-
+              <Chip
+                label="JavaScript"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
               <Chip
                 label="CSS"
                 color="primary"
@@ -151,17 +163,18 @@ function Cards() {
                 ToDoList
               </Typography>
               <Typography variant="body2" color="text.secondary">
-              {selectedLanguage === 'es' ? '   Aplicación web que permite crear una lista de tareas, con la posibilidad de ser filtradas por estados.' : ' Web application that allows you to create a list of tasks, with the possibility of filtering them by status.'}
-               </Typography>
+                {selectedLanguage === "es"
+                  ? "   Aplicación web que permite crear una lista de tareas, con la posibilidad de ser filtradas por estados."
+                  : " Web application that allows you to create a list of tasks, with the possibility of filtering them by status."}
+              </Typography>
               <Button
                 style={{ marginTop: "15px" }}
                 variant="outlined"
-      
                 onClick={() => {
                   goToPage("https://todo-list-4bhu.vercel.app/");
                 }}
               >
-                 {selectedLanguage === 'es' ? 'IR' : "GO"}
+                {selectedLanguage === "es" ? "IR" : "GO"}
               </Button>
             </CardContent>
           </CardActionArea>
@@ -186,7 +199,13 @@ function Cards() {
                 size="small"
                 className="pillTecnologias"
               />
-
+              <Chip
+                label="JavaScript"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
               <Chip
                 label="CSS"
                 color="primary"
@@ -194,36 +213,105 @@ function Cards() {
                 size="small"
                 className="pillTecnologias"
               />
-                 <Chip
+              <Chip
                 label="Bootstrap"
                 color="primary"
                 variant="outlined"
                 size="small"
                 className="pillTecnologias"
               />
-
             </Stack>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-              {selectedLanguage === 'es' ? 'Piedra, papel o tijera' : 'Rock, Paper, Scissors '}
+                {selectedLanguage === "es"
+                  ? "Piedra, papel o tijera"
+                  : "Rock, Paper, Scissors "}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-              {selectedLanguage === 'es' ? 'Pequeña recreación online del clásico juego.' : 'Small online recreation of the classic game.'}
-               </Typography>
-              <Button
-                style={{ marginTop: "85px" }}
+                {selectedLanguage === "es"
+                  ? "Pequeña recreación online del clásico juego."
+                  : "Small online recreation of the classic game."}
+              </Typography>
+              <div>
+                <Button
+                  style={{ marginTop: "55px" }}
+                  variant="outlined"
+                  onClick={() => {
+                    goToPage("https://piedra-papel-tijera-kohl.vercel.app/");
+                  }}
+                >
+                  {selectedLanguage === "es" ? "IR" : "GO"}
+                </Button>
+              </div>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+        <Card
+          sx={{ maxWidth: 250 }}
+          style={{ backgroundColor: "whitesmoke" }}
+          className="card-zoom"
+        >
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="140"
+              image="/rick&morti.jpg"
+              alt="pptijera"
+            />
+            <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+              <Chip
+                label="React"
+                color="primary"
                 variant="outlined"
-      
+                size="small"
+                className="pillTecnologias"
+              />
+              <Chip
+                label="TypeScript"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
+              <Chip
+                label="CSS"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
+              <Chip
+                label="Material UI"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
+            </Stack>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {selectedLanguage === "es"
+                  ? "Rick & Morty API"
+                  : "Rick & Morty API"}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {selectedLanguage === "es"
+                  ? " Página web que expone todos los personajes de la serie animada, consumiendo la API desarrollada por Axel Fuhrmann."
+                  : " Website that exposes all the characters of the animated series, consuming the API developed by Axel Fuhrmann."}
+              </Typography>
+
+              <Button
+                style={{ marginTop: "15px" }}
+                variant="outlined"
                 onClick={() => {
-                  goToPage("https://piedra-papel-tijera-kohl.vercel.app/");
+                  goToPage("https://rick-morty-tau-mauve.vercel.app/");
                 }}
               >
-                 {selectedLanguage === 'es' ? 'IR' : "GO"}
+                {selectedLanguage === "es" ? "IR" : "GO"}
               </Button>
             </CardContent>
           </CardActionArea>
         </Card>
-
       </div>
     </>
   );

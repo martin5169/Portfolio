@@ -8,33 +8,47 @@ import Container from "react-bootstrap/Container";
 import {
   IconBrandLinkedin,
   IconBrandGithubFilled,
+  IconBrandGmail
 } from "@tabler/icons-react";
 import { useSelector } from 'react-redux';
 
 function Body() {
   const selectedLanguage = useSelector((state) => state.language);
 
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:ignaciomartincommisso@gmail.com';
+  };
+
+
   return (
     <div className="name">
-      <h1>{selectedLanguage === 'es' ? "Hola, soy Ignacio Martin Commisso" : "Hi, I'm Ignacio Martin Commisso" }</h1>
+      <div className="intro">
+      <h1>{selectedLanguage === 'es' ? "Ignacio Martin Commisso" : "Ignacio Martin Commisso" }</h1>
       <h3>{selectedLanguage === 'es' ? 'Analista de Sistemas' : "Systems Analyst"}</h3>
       <Container className="iconos">
-        <Navbar.Brand href="https://www.linkedin.com/in/ignacio-martin-commisso-b9675b278/">
+        <Navbar.Brand href="https://www.linkedin.com/in/ignacio-martin-commisso-b9675b278/" title="Linkedin">
           <IconBrandLinkedin size={40}></IconBrandLinkedin>
         </Navbar.Brand>
-        <Navbar.Brand href="https://github.com/martin5169">
+        <Navbar.Brand href="https://github.com/martin5169" title="GitHub">
           <IconBrandGithubFilled size={40}></IconBrandGithubFilled>
+        </Navbar.Brand>
+        <Navbar.Brand title="Gmail">
+          <IconBrandGmail size={40}
+            color="white"
+            style={{ cursor: 'pointer' }}
+            onClick={handleEmailClick} ></IconBrandGmail>
         </Navbar.Brand>
       </Container>
       <div className="imagen">
         <img src="/pc.png" alt="pc" />
       </div>
-
+      </div>
+      
       <div className="aboutMe">
       <h2>{selectedLanguage === 'es' ? 'Sobre mí' : "About me"}</h2>
         <p className="aboutText">
-          {selectedLanguage=="es"?"Analista de sistemas recién graduado en la universidad ORT Argentina,con muchas ganas de dar mis primeros pasos en el mundo IT. Me encanta resolver problemas y afrontar nuevos retos. Soy proactivo,perseverante y adaptable." :
-          "Systems analyst recently graduated from the ORT University in Argentina, eager to take my first steps in the IT world. I love solving problems and taking on new challenges. I am proactive, persevering and adaptable."}
+          {selectedLanguage=="es"?"Analista de sistemas graduado en la universidad ORT Argentina, con muchas ganas de dar mis primeros pasos en el mundo IT. Me encanta resolver problemas y afrontar nuevos retos. Soy proactivo,perseverante y adaptable." :
+          "Systems analyst graduated from the ORT University in Argentina, eager to take my first steps in the IT world. I love solving problems and taking on new challenges. I am proactive, persevering and adaptable."}
         </p>
         
         <Button
