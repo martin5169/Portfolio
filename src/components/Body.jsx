@@ -53,7 +53,7 @@ function Body() {
         </p>
         <p className="aboutText">
           {selectedLanguage=="es"?"A lo largo de mis estudios, participé en diversos proyectos web y móviles, aplicando metodologías ágiles. Esta experiencia me ha permitido mejorar procesos y habilidades de estimación, contribuyendo al desarrollo efectivo de proyectos." :
-          "Throughout my academic studies, I have been involved in various web and mobile projects, utilizing agile methodologies. This experience has allowed me to gain expertise, enabling me to enhance different processes and estimations effectively."}
+          "Throughout my academic studies, I have been involved in several web and mobile projects, using agile methodologies. This experience has allowed me to gain knowledge, which allowed me to improve different processes and estimates effectively."}
         </p>
         
         
