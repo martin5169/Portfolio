@@ -379,7 +379,7 @@ function Cards() {
               <Typography variant="body2" color="text.secondary">
                 {selectedLanguage === "es"
                   ? " Página web desarrollada para una clinica médica, con registro de usuarios y medicos, brinda agenda para asignacion de turnos en ambos perfiles."
-                  : " Web application that allows users to create and manage their reading lists, with persistence."}
+                  : " Website developed for a medical clinic, with registration of users and doctors, provides schedule for assigning shifts in both profiles"}
               </Typography>
               <Button
                 style={{ marginTop: "35px" }}
