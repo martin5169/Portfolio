@@ -96,7 +96,7 @@ function Cards() {
                   : " Web application that allows users to create and manage their reading lists, with persistence."}
               </Typography>
               <Button
-                style={{ marginTop: "35px" }}
+                style={{ marginTop: "75px" }}
                 variant="outlined"
                 onClick={() => {
                   goToPage("https://react-library-tau.vercel.app/");
@@ -168,7 +168,7 @@ function Cards() {
                   : " Web application that allows you to create a list of tasks, with the possibility of filtering them by status."}
               </Typography>
               <Button
-                style={{ marginTop: "15px" }}
+                style={{ marginTop: "55px" }}
                 variant="outlined"
                 onClick={() => {
                   goToPage("https://todo-list-4bhu.vercel.app/");
@@ -234,7 +234,7 @@ function Cards() {
               </Typography>
               <div>
                 <Button
-                  style={{ marginTop: "55px" }}
+                  style={{ marginTop: "95px" }}
                   variant="outlined"
                   onClick={() => {
                     goToPage("https://piedra-papel-tijera-kohl.vercel.app/");
@@ -301,10 +301,91 @@ function Cards() {
               </Typography>
 
               <Button
-                style={{ marginTop: "15px" }}
+                style={{ marginTop: "55px" }}
                 variant="outlined"
                 onClick={() => {
                   goToPage("https://rick-morty-tau-mauve.vercel.app/");
+                }}
+              >
+                {selectedLanguage === "es" ? "IR" : "GO"}
+              </Button>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+        <Card
+          sx={{ maxWidth: 250 }}
+          style={{ backgroundColor: "whitesmoke" }}
+          className="card-zoom"
+        >
+   
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="140"
+              image="/ortMedic.jpeg"
+              alt="Library"
+            />
+            <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+              <Chip
+                label="VueJS"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
+              <Chip
+                label="JavaScript"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
+              <Chip
+                label="NodeJS"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
+
+              <Chip
+                label="CSS"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
+
+              <Chip
+                label="Bootstrap"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
+
+              <Chip
+                label="MongoDB"
+                color="primary"
+                variant="outlined"
+                size="small"
+                className="pillTecnologias"
+              />
+            </Stack>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                ORTMedic
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {selectedLanguage === "es"
+                  ? " Página web desarrollada para una clinica médica, con registro de usuarios y medicos, brinda agenda para asignacion de turnos en ambos perfiles."
+                  : " Web application that allows users to create and manage their reading lists, with persistence."}
+              </Typography>
+              <Button
+                style={{ marginTop: "35px" }}
+                variant="outlined"
+                onClick={() => {
+                  goToPage("https://github.com/martin5169/proyectoTP2");
                 }}
               >
                 {selectedLanguage === "es" ? "IR" : "GO"}

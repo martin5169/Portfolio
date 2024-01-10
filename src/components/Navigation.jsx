@@ -84,7 +84,6 @@ function Navigation() {
       </Button>
       <div style={{ marginLeft: 'auto' }}>    
       <Stack direction="row" spacing={1} alignItems="center" >
-     
         <Typography>EN</Typography>
         <img src="/ukflag.png" height={17} alt="UK Flag" />
         <AntSwitch checked={selectedLanguage === 'es'} inputProps={{ 'aria-label': 'ant design' }}  onChange={toggleLanguage}  />

@@ -47,9 +47,15 @@ function Body() {
       <div className="aboutMe">
       <h2>{selectedLanguage === 'es' ? 'Sobre mí' : "About me"}</h2>
         <p className="aboutText">
-          {selectedLanguage=="es"?"Analista de sistemas graduado en la universidad ORT Argentina, con muchas ganas de dar mis primeros pasos en el mundo IT. Me encanta resolver problemas y afrontar nuevos retos. Soy proactivo,perseverante y adaptable." :
-          "Systems analyst graduated from the ORT University in Argentina, eager to take my first steps in the IT world. I love solving problems and taking on new challenges. I am proactive, persevering and adaptable."}
+          {selectedLanguage=="es"?
+          "Soy un graduado en Análisis de Sistemas de la Universidad ORT Argentina, entusiasmado por comenzar mi carrera en el campo de la tecnología. Disfruto resolviendo problemas y enfrentando nuevos desafíos. Mi enfoque es proactivo, demostrando perseverancia y capacidad de adaptación." :
+          "I am a Systems Analysis graduate from the University ORT Argentina, eager to take my first steps in the IT world. I love solving problems and tackling new challenges. I am proactive, persevering, and adaptable."}
         </p>
+        <p className="aboutText">
+          {selectedLanguage=="es"?"A lo largo de mis estudios, participé en diversos proyectos web y móviles, aplicando metodologías ágiles. Esta experiencia me ha permitido mejorar procesos y habilidades de estimación, contribuyendo al desarrollo efectivo de proyectos." :
+          "Throughout my academic studies, I have been involved in various web and mobile projects, utilizing agile methodologies. This experience has allowed me to gain expertise, enabling me to enhance different processes and estimations effectively."}
+        </p>
+        
         
         <Button
           variant="outlined"
@@ -87,14 +93,20 @@ function Body() {
         <Tooltip title="JAVA">
           <img src="./java.svg" width={64} height={64} style={{ margin: 10 }}/>
         </Tooltip>
+        <Tooltip title="Kotlin">
+          <img src="./kotlin.svg" width={64} height={64} style={{ margin: 10 }}/>
+        </Tooltip>
         <Tooltip title="MySql">
           <img src="./mysql.svg" width={64} height={64} style={{ margin: 10 }}/>
         </Tooltip>
         <Tooltip title="SQLserver">
           <img src="./sql-server.svg" width={64} height={64} style={{ margin: 10 }}/>
         </Tooltip>
-        <Tooltip title="Kotlin">
-          <img src="./kotlin.svg" width={64} height={64} style={{ margin: 10 }}/>
+        <Tooltip title="MongoDB">
+          <img src="./mongodb.svg" width={64} height={64} style={{ margin: 10 }}/>
+        </Tooltip>
+        <Tooltip title="Firebase">
+          <img src="./firebase.svg" width={64} height={64} style={{ margin: 10 }}/>
         </Tooltip>
       </div>
     </div>
