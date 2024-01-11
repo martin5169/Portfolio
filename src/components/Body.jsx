@@ -19,12 +19,16 @@ function Body() {
     window.location.href = 'mailto:ignaciomartincommisso@gmail.com';
   };
 
+  const handleButtonClick = () => {
+    window.open('https://drive.google.com/file/d/1xugWJ5BOa0hF-tIwjfw-oX1MrlR4XpZ-/view?usp=sharing', '_blank');
+  };
+
 
   return (
     <div className="name">
       <div className="intro">
       <h1>{selectedLanguage === 'es' ? "Ignacio Martin Commisso" : "Ignacio Martin Commisso" }</h1>
-      <h3>{selectedLanguage === 'es' ? 'Analista de Sistemas' : "Systems Analyst"}</h3>
+      <h1>{selectedLanguage === 'es' ? 'Analista de Sistemas' : "Systems Analyst"}</h1>
       <Container className="iconos">
         <Navbar.Brand href="https://www.linkedin.com/in/ignacio-martin-commisso-b9675b278/" title="Linkedin">
           <IconBrandLinkedin size={40}></IconBrandLinkedin>
@@ -35,13 +39,15 @@ function Body() {
         <Navbar.Brand title="Gmail">
           <IconBrandGmail size={40}
             color="white"
+       
             style={{ cursor: 'pointer' }}
-            onClick={handleEmailClick} ></IconBrandGmail>
+            onClick={handleEmailClick} 
+            ></IconBrandGmail>
         </Navbar.Brand>
       </Container>
-      <div className="imagen">
-        <img src="/pc.png" alt="pc" />
-      </div>
+        <div className="imagen">
+          <img src="/pc.png" alt="pc" />
+        </div>
       </div>
       
       <div className="aboutMe">
@@ -58,13 +64,21 @@ function Body() {
         
         
         <Button
-          variant="outlined"
-          color="inherit"
-          href="https://drive.google.com/file/d/1xugWJ5BOa0hF-tIwjfw-oX1MrlR4XpZ-/view?usp=sharing"
-          startIcon={<IconFileDownload size={30} />}
-        >
-          {selectedLanguage === 'es' ? 'VER CV' : "VIEW RESUME"}
-        </Button>
+  className="glow-on-hover"
+  onClick={handleButtonClick}
+  style={{ fontSize: '20px' , fontFamily :'Tektur', color:'white'}} 
+>
+  {selectedLanguage === 'es' ? (
+    <>
+      <IconFileDownload size={32} style={{marginRight:15}}/>  VER CV
+    </>
+  ) : (
+    <>
+  <IconFileDownload size={32} style={{marginRight:15}}/>   VIEW RESUME 
+  </>
+  )}
+</Button>
+
       </div>
 
       <div className="skills">
@@ -109,6 +123,7 @@ function Body() {
           <img src="./firebase.svg" width={64} height={64} style={{ margin: 10 }}/>
         </Tooltip>
       </div>
+
     </div>
   );
 }
