@@ -39,6 +39,7 @@ body {
   place-items: center;
   min-width: 100vh;
   min-height: 100vh;
+
 }
 
 h1 {
@@ -102,9 +103,10 @@ h3{
 }
 .bg-body-tertiary {
   display: flex;
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   padding: 5px 15px;
-  background-color: #2d639c;
+  background-image: url("/public/cbs1.png");
   
 }
 
@@ -139,7 +141,7 @@ h3{
 }
 
 .aboutMe{
-  background-color: #2d639c;
+  background-image: url("/public/cbs1.png");
   color: whitesmoke;
   border-radius: 15px;
   padding: 25px;

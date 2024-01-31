@@ -18,6 +18,7 @@ import SP5 from "/SP5.png"
 function Cards() {
   const selectedLanguage = useSelector((state) => state.language);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalShow, setModalShow] = React.useState(false);
   const goToPage = (url) => {
     window.open(url, "_blank");
   };
@@ -30,9 +31,13 @@ function Cards() {
       delay: 100,
     });
   }, []);
-
-  const [modalShow, setModalShow] = React.useState(false);
-
+  
+  const library = ["React","JavaScript","CSS","Boostrap","Material UI"]
+  const toDoList = ["React","JavaScript","CSS","Tailwind CSS","Material UI"]
+  const piedraPapel = ["React","JavaScript","CSS","Boostrap"]
+  const rick = ["React","TypeScript","CSS","Material UI"]
+  const ortMedic = ["VueJS","JavaScript","NodeJS","CSS","Boostrap","MongoDB"]
+  const safePet = ["Kotlin","Firebase"]
   return (
     <>
       <h2>{selectedLanguage === "es" ? "Proyectos" : "Projects"}</h2>
@@ -59,8 +64,10 @@ function Cards() {
               alt="Library"
             />
             <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+              {library.map(t => (
+                
               <Chip
-                label="React"
+                label={t}
                 color="primary"
                 variant="outlined"
                 size="small"
@@ -69,41 +76,8 @@ function Cards() {
                 backgroundColor="red"
                 style={{ fontFamily: "'Tektur', sans-serif" }}
               />
-              <Chip
-                label="JavaScript"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-
-              <Chip
-                label="CSS"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-
-              <Chip
-                label="Bootstrap"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-
-              <Chip
-                label="Material UI"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
+              ))}
+           
             </Stack>
             <CardContent>
               <Typography
@@ -124,7 +98,7 @@ function Cards() {
                   : " Web application that allows users to create and manage their reading lists, with persistence."}
               </Typography>
               <Button
-                style={{ marginTop: "75px" }}
+                style={{ marginTop: "85px" }}
                 variant="outlined"
                 onClick={() => {
                   goToPage("https://react-library-tau.vercel.app/");
@@ -147,50 +121,23 @@ function Cards() {
               image="/todo-list.jpg"
               alt="Library"
             />
-            <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+           <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+              {toDoList.map(t => (
+                
               <Chip
-                label="React"
+                label={t}
                 color="primary"
                 variant="outlined"
                 size="small"
                 className="pillTecnologias"
+                fontFamily="'Tektur', sans-serif"
+                backgroundColor="red"
                 style={{ fontFamily: "'Tektur', sans-serif" }}
               />
-              <Chip
-                label="JavaScript"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-              <Chip
-                label="CSS"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-
-              <Chip
-                label="Tailwind CSS"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-
-              <Chip
-                label="Material UI"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
+              ))}
+           
             </Stack>
+
             <CardContent>
               <Typography
                 gutterBottom
@@ -210,7 +157,7 @@ function Cards() {
                   : " Web application that allows you to create a list of tasks, with the possibility of filtering them by status."}
               </Typography>
               <Button
-                style={{ marginTop: "55px" }}
+                style={{ marginTop: "85px" }}
                 variant="outlined"
                 onClick={() => {
                   goToPage("https://todo-list-4bhu.vercel.app/");
@@ -234,38 +181,20 @@ function Cards() {
               alt="pptijera"
             />
             <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+              {piedraPapel.map(t => (
+                
               <Chip
-                label="React"
+                label={t}
                 color="primary"
                 variant="outlined"
                 size="small"
                 className="pillTecnologias"
+                fontFamily="'Tektur', sans-serif"
+                backgroundColor="red"
                 style={{ fontFamily: "'Tektur', sans-serif" }}
               />
-              <Chip
-                label="JavaScript"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-              <Chip
-                label="CSS"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-              <Chip
-                label="Bootstrap"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
+              ))}
+           
             </Stack>
             <CardContent>
               <Typography
@@ -313,39 +242,21 @@ function Cards() {
               image="/rick&morti.jpg"
               alt="pptijera"
             />
-            <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+           <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+              {rick.map(t => (
+                
               <Chip
-                label="React"
+                label={t}
                 color="primary"
                 variant="outlined"
                 size="small"
                 className="pillTecnologias"
+                fontFamily="'Tektur', sans-serif"
+                backgroundColor="red"
                 style={{ fontFamily: "'Tektur', sans-serif" }}
               />
-              <Chip
-                label="TypeScript"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-              <Chip
-                label="CSS"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-              <Chip
-                label="Material UI"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
+              ))}
+           
             </Stack>
             <CardContent>
               <Typography
@@ -367,7 +278,7 @@ function Cards() {
               </Typography>
 
               <Button
-                style={{ marginTop: "55px" }}
+                style={{ marginTop: "65px" }}
                 variant="outlined"
                 onClick={() => {
                   goToPage("https://rick-morty-tau-mauve.vercel.app/");
@@ -390,58 +301,21 @@ function Cards() {
               image="/ortMedic.jpeg"
               alt="Library"
             />
-            <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+                <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+              {ortMedic.map(t => (
+                
               <Chip
-                label="VueJS"
+                label={t}
                 color="primary"
                 variant="outlined"
                 size="small"
                 className="pillTecnologias"
+                fontFamily="'Tektur', sans-serif"
+                backgroundColor="red"
                 style={{ fontFamily: "'Tektur', sans-serif" }}
               />
-              <Chip
-                label="JavaScript"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-              <Chip
-                label="NodeJS"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-
-              <Chip
-                label="CSS"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-
-              <Chip
-                label="Bootstrap"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-
-              <Chip
-                label="MongoDB"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
+              ))}
+           
             </Stack>
             <CardContent>
               <Typography
@@ -462,7 +336,7 @@ function Cards() {
                   : " Website developed for a medical clinic, with registration of users and doctors, provides schedule for assigning shifts in both profiles"}
               </Typography>
               <Button
-                style={{ marginTop: "35px" }}
+                style={{ marginTop: "45px" }}
                 variant="outlined"
                 onClick={() => {
                   goToPage("https://github.com/martin5169/proyectoTP2");
@@ -485,24 +359,21 @@ function Cards() {
               image="/logoSafePet.jpeg"
               alt="SP"
             />
-            <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+           <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+              {safePet.map(t => (
+                
               <Chip
-                label="Kotlin"
+                label={t}
                 color="primary"
                 variant="outlined"
                 size="small"
                 className="pillTecnologias"
+                fontFamily="'Tektur', sans-serif"
+                backgroundColor="red"
                 style={{ fontFamily: "'Tektur', sans-serif" }}
               />
-
-              <Chip
-                label="Firebase"
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
+              ))}
+           
             </Stack>
             <CardContent>
               <Typography
