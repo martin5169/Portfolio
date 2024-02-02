@@ -11,6 +11,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 a {
   font-weight: 500;
@@ -131,6 +132,7 @@ h3{
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
+  padding: 40px;
 }
 
 .skills{
