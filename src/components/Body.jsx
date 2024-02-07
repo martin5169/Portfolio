@@ -66,7 +66,7 @@ function Body() {
         <h2>{selectedLanguage === "es" ? "Sobre mí" : "About me"}</h2>
         <p className="aboutText">
           {selectedLanguage == "es"
-            ? "Soy un graduado en Análisis de Sistemas de la Universidad ORT Argentina, entusiasmado por comenzar mi carrera en el campo de la tecnología. Disfruto resolviendo problemas y enfrentando nuevos desafíos. Mi enfoque es proactivo, demostrando perseverancia y capacidad de adaptación."
+            ? "Analista de Sistemas de la Universidad ORT Argentina, entusiasmado por comenzar mi carrera en el campo de la tecnología. Disfruto resolviendo problemas y enfrentando nuevos desafíos. Mi enfoque es proactivo, demostrando perseverancia y capacidad de adaptación."
             : "I am a Systems Analysis graduate from the University ORT Argentina, eager to take my first steps in the IT world. I love solving problems and tackling new challenges. I am proactive, persevering, and adaptable."}
         </p>
         <p className="aboutText">

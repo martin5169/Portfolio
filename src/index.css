@@ -22,9 +22,11 @@ a:hover {
   color: #2d639c;
   opacity: 0.9; 
 }
+
 .card-zoom:hover {
   transform: scale(1.15);
   transition: transform 0.6s ease;
+  box-shadow: #3a8abb 0px 1px 10px 8px;
 }
 
 .tecnologias{
@@ -46,7 +48,7 @@ body {
 h1 {
   font-size: 2.7em;
   position: relative;
-  color: #fff; /* Corregí el valor de color a un formato válido (#fff) */
+  color: #fff;
   font-weight: bold!important;
   letter-spacing: 8px!important;
   overflow: hidden;
@@ -78,7 +80,6 @@ h1 {
 }
 
 h2 {
-
   font-size: 45px;
   line-height: 1.1;
   margin-bottom: 50px;
@@ -95,7 +96,6 @@ h3{
   display: grid;
   justify-self: left;
   padding:.9rem .5rem ;
-
   background-size: cover;  
   background-position: center;  
 }
@@ -110,7 +110,7 @@ h3{
   justify-content: center;
   align-items: center;
   padding: 5px 15px;
-  background-image: url("/public/cbs1.png");
+  background-image: url("/cbs1.png");
   
 }
 
@@ -121,7 +121,6 @@ h3{
   gap: 30px;
 }
 
-
 #root {
   margin: auto;
   padding: 0.5rem;
@@ -131,7 +130,7 @@ h3{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 50px;
   padding: 40px;
 }
 
@@ -146,7 +145,7 @@ h3{
 }
 
 .aboutMe{
-  background-image: url("/public/cbs1.png");
+  background-image: url("/cbs1.png");
   color: whitesmoke;
   border-radius: 15px;
   padding: 25px;
@@ -192,19 +191,17 @@ h3{
 }
 
 .modal {
-  margin-top: 50px;
-  margin-left: 50px;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 10%;
+  left: 10%;
  
 }
 
 .modal-content {
-  background-color: #2d639c;
+  background-image: url("/cbs1.png");
   padding: 50px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 80px rgba(240, 238, 238, 0.5);
 }
 
 .glow-on-hover {

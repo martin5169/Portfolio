@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -9,19 +8,16 @@ import { CardActionArea, Stack, Chip, Button, Box } from "@mui/material";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import MyVerticallyCenteredModal from "./ModalForImages";
-import SP1 from "/SP1.png"
-import SP2 from "/SP2.png"
-import SP3 from "/SP3.png"
-import SP4 from "/SP4.png"
-import SP5 from "/SP5.png"
+
+import SP1 from "/SP1.png";
+import SP2 from "/SP2.png";
+import SP3 from "/SP3.png";
+import SP4 from "/SP4.png";
+import SP5 from "/SP5.png";
 
 function Cards() {
   const selectedLanguage = useSelector((state) => state.language);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalShow, setModalShow] = React.useState(false);
-  const goToPage = (url) => {
-    window.open(url, "_blank");
-  };
+  const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
     Aos.init({
@@ -31,13 +27,89 @@ function Cards() {
       delay: 100,
     });
   }, []);
+
+  const projects = [
+    {
+      titleEs: "Librería",
+      titleEn: "Bookstore",
+      image: "/library.jpg",
+      technologies: ["React", "JavaScript", "CSS", "Boostrap", "Material UI"],
+      descriptionEs:
+        "Página web que permite a los usuarios crear y gestionar sus listas de lectura, con listado de favoritos.",
+      descriptionEn:
+        "Website that allows users to create and manage their reading lists, with list of favorites.",
+      url: "https://react-library-tau.vercel.app/",
+    },
+    {
+      titleEs: "Lista de tareas",
+      titleEn: "To Do List",
+      image: "/todo-list.jpg",
+      technologies: ["React", "JavaScript", "CSS", "Tailwind CSS", "Material UI"],
+      descriptionEs:
+        "Aplicación web que permite crear una lista de tareas, con la posibilidad de ser filtradas por estados.",
+      descriptionEn:
+        "Web application that allows you to create a list of tasks, with the possibility of filtering them by status.",
+      url: "https://todo-list-4bhu.vercel.app/",
+    },
+   {
+      titleEs: "Rick & Morty",
+      titleEn: "Rick & Morty",
+      image: "/rick&morti.jpg",
+      technologies: ["React", "TypeScript", "CSS", "Material UI"],
+      descriptionEs:
+        "Página web que expone todos los personajes de la serie animada, consumiendo la API desarrollada por Axel Fuhrmann.",
+      descriptionEn:
+        "Website that exposes all the characters of the animated series, consuming the API developed by Axel Fuhrmann.",
+      url: "https://rick-morty-tau-mauve.vercel.app/",
+    },
+    {
+      titleEs: "TaTeTi",
+      titleEn: "TicTacToe",
+      image: "/ticTac.jpg",
+      technologies: ["React", "JavaScript", "Tailwind CSS", "Boostrap"],
+      descriptionEs: "Recreación online del clásico juego.",
+      descriptionEn: "Online recreation of the classic game.",
+      url: "https://tic-tac-toe-theta-roan.vercel.app/",
+    },
+    {
+      titleEs: "ORTMedic",
+      titleEn: "ORTMedic",
+      image: "/ortMedic.jpeg",
+      technologies: ["VueJS", "JavaScript", "NodeJS", "CSS", "Boostrap", "MongoDB"],
+      descriptionEs:
+        "Página web desarrollada para una clínica médica, con registro de usuarios y médicos, brinda agenda para asignación de turnos en ambos perfiles.",
+      descriptionEn:
+        "Website developed for a medical clinic, with registration of users and doctors, provides schedule for assigning shifts in both profiles.",
+      url: "https://github.com/martin5169/proyectoTP2",
+    },
+    {
+      titleEs: "SafePet",
+      titleEn: "SafePet",
+      image: "/logoSafePet.jpeg",
+      technologies: ["Kotlin", "Firebase"],
+      descriptionEs:
+        "Aplicación móvil, para el paseo inteligente de mascotas, permitiendo registrar usuarios y paseadores, con localización en vivo, utilizando los servicios de Google.",
+      descriptionEn:
+        "Mobile application, for the intelligent walking of pets, allowing users and walkers to register, with live location, using Google services.",
+      url: "https://github.com/martin5169/SafePet",
+      images: [SP1, SP2, SP3, SP4, SP5],
+    },
+    {
+      titleEs: "Piedra, papel o tijera",
+      titleEn: "Rock, paper  or scissors",
+      image: "/pptijera.jpg",
+      technologies: ["React", "JavaScript", "CSS", "Boostrap"],
+      descriptionEs: "Pequeña recreación online del clásico juego.",
+      descriptionEn: "Online recreation of the classic game.",
+      url: "https://piedra-papel-tijera-kohl.vercel.app/",
+    },
+  ];
+
+  const goToPage = (url) => {
+    window.open(url, "_blank");
+  };
+
   
-  const library = ["React","JavaScript","CSS","Boostrap","Material UI"]
-  const toDoList = ["React","JavaScript","CSS","Tailwind CSS","Material UI"]
-  const piedraPapel = ["React","JavaScript","CSS","Boostrap"]
-  const rick = ["React","TypeScript","CSS","Material UI"]
-  const ortMedic = ["VueJS","JavaScript","NodeJS","CSS","Boostrap","MongoDB"]
-  const safePet = ["Kotlin","Firebase"]
   return (
     <>
       <h2>{selectedLanguage === "es" ? "Proyectos" : "Projects"}</h2>
@@ -48,37 +120,34 @@ function Cards() {
         data-aos-easing="ease-in-sine"
         data-aos-duration="600"
       >
-        <Card
-          sx={{ maxWidth: 250 }}
-          style={{
-            backgroundColor: "whitesmoke",
-            fontFamily: " font-family: 'Tektur', sans-serif",
-          }}
-          className="card-zoom"
-        >
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image="/library.jpg"
-              alt="Library"
-            />
-            <Stack direction="row" spacing={1} gap={1} className="tecnologias">
-              {library.map(t => (
-                
-              <Chip
-                label={t}
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                fontFamily="'Tektur', sans-serif"
-                backgroundColor="red"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
+        {projects.map((project, index) => (
+          <Card
+            key={index}
+            sx={{ maxWidth: 250 }}
+            style={{ backgroundColor :"white" , cursor:"pointer" }}
+            className="card-zoom"
+          >
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="170"
+                image={project.image}
+                alt={project.titleEn}
               />
-              ))}
-           
-            </Stack>
+              <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+                {project.technologies.map((tech, index) => (
+                  <Chip
+                    key={index}
+                    label={tech}
+                    color="primary"
+                    variant="outlined"
+                    size="small"
+                    className="pillTecnologias"
+                  style={{ fontFamily: "'Tektur', sans-serif" }}
+                  />
+                ))}
+              </Stack>
+            </CardActionArea>
             <CardContent>
               <Typography
                 gutterBottom
@@ -86,342 +155,59 @@ function Cards() {
                 component="div"
                 style={{ fontFamily: "'Tektur', sans-serif" }}
               >
-                Library
+                {selectedLanguage == "es" ? project.titleEs : project.titleEn }
               </Typography>
               <Typography
                 variant="body2"
                 color="text.secondary"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
+                style={{ fontFamily: "'Tektur'" , minHeight:"120px"}}
               >
                 {selectedLanguage === "es"
-                  ? " Aplicación web que permite a los usuarios crear y gestionar sus listas de lectura, con persistencia."
-                  : " Web application that allows users to create and manage their reading lists, with persistence."}
+                  ? project.descriptionEs
+                  : project.descriptionEn}
               </Typography>
+            </CardContent>
+            <Box
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginBottom: "10px",
+       
+              }}
+            > 
               <Button
-                style={{ marginTop: "85px" }}
+                
                 variant="outlined"
                 onClick={() => {
-                  goToPage("https://react-library-tau.vercel.app/");
+                  goToPage(project.url);
                 }}
               >
                 {selectedLanguage === "es" ? "WEB" : "WEB"}
               </Button>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        <Card
-          sx={{ maxWidth: 250 }}
-          style={{ backgroundColor: "whitesmoke" }}
-          className="card-zoom"
-        >
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image="/todo-list.jpg"
-              alt="Library"
-            />
-           <Stack direction="row" spacing={1} gap={1} className="tecnologias">
-              {toDoList.map(t => (
-                
-              <Chip
-                label={t}
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                fontFamily="'Tektur', sans-serif"
-                backgroundColor="red"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-              ))}
-           
-            </Stack>
-
-            <CardContent>
-              <Typography
-                gutterBottom
-                variant="h5"
-                component="div"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              >
-                ToDoList
-              </Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              >
-                {selectedLanguage === "es"
-                  ? "   Aplicación web que permite crear una lista de tareas, con la posibilidad de ser filtradas por estados."
-                  : " Web application that allows you to create a list of tasks, with the possibility of filtering them by status."}
-              </Typography>
-              <Button
-                style={{ marginTop: "85px" }}
-                variant="outlined"
-                onClick={() => {
-                  goToPage("https://todo-list-4bhu.vercel.app/");
-                }}
-              >
-                {selectedLanguage === "es" ? "WEB" : "WEB"}
-              </Button>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        <Card
-          sx={{ maxWidth: 250 }}
-          style={{ backgroundColor: "whitesmoke" }}
-          className="card-zoom"
-        >
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image="/pptijera.jpg"
-              alt="pptijera"
-            />
-            <Stack direction="row" spacing={1} gap={1} className="tecnologias">
-              {piedraPapel.map(t => (
-                
-              <Chip
-                label={t}
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                fontFamily="'Tektur', sans-serif"
-                backgroundColor="red"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-              ))}
-           
-            </Stack>
-            <CardContent>
-              <Typography
-                gutterBottom
-                variant="h5"
-                component="div"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              >
-                {selectedLanguage === "es"
-                  ? "Piedra, papel o tijera"
-                  : "Rock, Paper, Scissors "}
-              </Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              >
-                {selectedLanguage === "es"
-                  ? "Pequeña recreación online del clásico juego."
-                  : "Small online recreation of the classic game."}
-              </Typography>
-              <div>
+              </Box>
+            {/* Renderizo el boton de imagenes solo para el proyecto de SafePet*/}
+            {(project.titleEs === "SafePet" || project.titleEn === "SafePet") && (
+              
                 <Button
-                  style={{ marginTop: "95px" }}
+                style = {{marginTop:"px"}}
                   variant="outlined"
-                  onClick={() => {
-                    goToPage("https://piedra-papel-tijera-kohl.vercel.app/");
-                  }}
+                  onClick={() => setModalShow(true)}
                 >
-                  {selectedLanguage === "es" ? "WEB" : "WEB"}
+                  {selectedLanguage === "es" ? "IMÁGENES" : "IMAGES"}
                 </Button>
-              </div>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        <Card
-          sx={{ maxWidth: 250 }}
-          style={{ backgroundColor: "whitesmoke" }}
-          className="card-zoom"
-        >
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image="/rick&morti.jpg"
-              alt="pptijera"
-            />
-           <Stack direction="row" spacing={1} gap={1} className="tecnologias">
-              {rick.map(t => (
-                
-              <Chip
-                label={t}
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                fontFamily="'Tektur', sans-serif"
-                backgroundColor="red"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-              ))}
-           
-            </Stack>
-            <CardContent>
-              <Typography
-                gutterBottom
-                variant="h5"
-                component="div"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              >
-                {selectedLanguage === "es" ? "Rick & Morty" : "Rick & Morty"}
-              </Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              >
-                {selectedLanguage === "es"
-                  ? " Página web que expone todos los personajes de la serie animada, consumiendo la API desarrollada por Axel Fuhrmann."
-                  : " Website that exposes all the characters of the animated series, consuming the API developed by Axel Fuhrmann."}
-              </Typography>
-
-              <Button
-                style={{ marginTop: "65px" }}
-                variant="outlined"
-                onClick={() => {
-                  goToPage("https://rick-morty-tau-mauve.vercel.app/");
-                }}
-              >
-                {selectedLanguage === "es" ? "WEB" : "WEB"}
-              </Button>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        <Card
-          sx={{ maxWidth: 250 }}
-          style={{ backgroundColor: "whitesmoke" }}
-          className="card-zoom"
-        >
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image="/ortMedic.jpeg"
-              alt="Library"
-            />
-                <Stack direction="row" spacing={1} gap={1} className="tecnologias">
-              {ortMedic.map(t => (
-                
-              <Chip
-                label={t}
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                fontFamily="'Tektur', sans-serif"
-                backgroundColor="red"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-              ))}
-           
-            </Stack>
-            <CardContent>
-              <Typography
-                gutterBottom
-                variant="h5"
-                component="div"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              >
-                ORTMedic
-              </Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              >
-                {selectedLanguage === "es"
-                  ? " Página web desarrollada para una clinica médica, con registro de usuarios y medicos, brinda agenda para asignacion de turnos en ambos perfiles."
-                  : " Website developed for a medical clinic, with registration of users and doctors, provides schedule for assigning shifts in both profiles"}
-              </Typography>
-              <Button
-                style={{ marginTop: "45px" }}
-                variant="outlined"
-                onClick={() => {
-                  goToPage("https://github.com/martin5169/proyectoTP2");
-                }}
-              >
-                {selectedLanguage === "es" ? "GITHUB" : "GITHUB"}
-              </Button>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        <Card
-          sx={{ maxWidth: 250 }}
-          style={{ backgroundColor: "whitesmoke" }}
-          className="card-zoom"
-        >
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image="/logoSafePet.jpeg"
-              alt="SP"
-            />
-           <Stack direction="row" spacing={1} gap={1} className="tecnologias">
-              {safePet.map(t => (
-                
-              <Chip
-                label={t}
-                color="primary"
-                variant="outlined"
-                size="small"
-                className="pillTecnologias"
-                fontFamily="'Tektur', sans-serif"
-                backgroundColor="red"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              />
-              ))}
-           
-            </Stack>
-            <CardContent>
-              <Typography
-                gutterBottom
-                variant="h5"
-                component="div"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              >
-                SafePet
-              </Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                style={{ fontFamily: "'Tektur', sans-serif" }}
-              >
-                {selectedLanguage === "es"
-                  ? " Aplicacion móvil, para el paseo inteligente de mascotas, permitiendo registrar usuarios y paseadores, con localización en vivo, utilizando los servicios de Google."
-                  : " Mobile application, for the intelligent walking of pets, allowing users and walkers to register, with live location, using Google services."}
-              </Typography>
-              <Button
-                style={{
-                  marginTop: "35px",
-                  marginRight: "5px",
-                  fontFamily: "'Tektur', sans-serif",
-                }}
-                variant="outlined"
-                onClick={() => setModalShow(true)}
-              >
-                {selectedLanguage === "es" ? "IMÁGENES" : "IMAGES"}
-              </Button>
+             
+            )}
+            {/* Renderizar el modal de imagenes solo para SafePet */}
+            {(project.titleEs === "SafePet" || project.titleEn === "SafePet")  && (
               <MyVerticallyCenteredModal
                 show={modalShow}
-                title = {"SafePet"}
-                images = {[SP1,SP2,SP3,SP4,SP5]}
+                images={project.images}
                 onHide={() => setModalShow(false)}
               />
-              <Button
-                style={{ marginTop: "35px", marginRight: "5px" }}
-                variant="outlined"
-                onClick={() => {
-                  goToPage("https://github.com/martin5169/SafePet");
-                }}
-              >
-                {selectedLanguage === "es" ? "Github" : "GO"}
-              </Button>
-            </CardContent>
-          </CardActionArea>
-        </Card>
+            )}
+          </Card>
+        ))}
       </div>
     </>
   );
