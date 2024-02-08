@@ -210,7 +210,7 @@ function Cards() {
             {(project.titleEs === "SafePet" ||
               project.titleEn === "SafePet") && (
               <Button
-                style={{ marginTop: "px" }}
+                style={{ marginBottom: "15px" }}
                 variant="outlined"
                 onClick={() => setModalShow(true)}
               >
