@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom/client'
 import Navigation from './Navigation.jsx'
 import Body from './Body.jsx'
 import Cards from './Cards.jsx'
-
-
 import '../index.css'
 import { Provider } from 'react-redux';
 import store from '../redux/store';

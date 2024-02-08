@@ -10,10 +10,9 @@ import {
 } from "@tabler/icons-react";
 import { useSelector } from "react-redux";
 
-
 function Body() {
   const selectedLanguage = useSelector((state) => state.language);
-  
+
   const handleEmailClick = () => {
     window.location.href = "mailto:ignaciomartincommisso@gmail.com";
   };
@@ -25,14 +24,26 @@ function Body() {
     );
   };
 
+  const skills = [
+    { title: "HTML5", imgSrc: "./html5.svg" },
+    { title: "CSS", imgSrc: "./css.svg" },
+    { title: "Tailwind", imgSrc: "./tailwindcss.svg" },
+    { title: "Javascript", imgSrc: "./javascript.svg" },
+    { title: "NodeJs", imgSrc: "./nodejs.svg" },
+    { title: "React", imgSrc: "./react.svg" },
+    { title: "Vue.js", imgSrc: "./vue.svg" },
+    { title: "JAVA", imgSrc: "./java.svg" },
+    { title: "Kotlin", imgSrc: "./kotlin.svg" },
+    { title: "MySql", imgSrc: "./mysql.svg" },
+    { title: "SQLserver", imgSrc: "./sql-server.svg" },
+    { title: "MongoDB", imgSrc: "./mongodb.svg" },
+    { title: "Firebase", imgSrc: "./firebase.svg" },
+  ];
+
   return (
     <div className="name">
       <div className="intro">
-        <h1>
-          {selectedLanguage === "es"
-            ? "Ignacio Martin Commisso"
-            : "Ignacio Martin Commisso"}
-        </h1>
+        <h1>Ignacio Martin Commisso</h1>
         <h1>
           {selectedLanguage === "es"
             ? "Analista de Sistemas"
@@ -95,95 +106,16 @@ function Body() {
 
       <div className="skills">
         <h2>{selectedLanguage === "es" ? "Habilidades" : "Skills"}</h2>
-        <Tooltip title="HTML5">
-          <img
-            src="./html5.svg"
-            width={64}
-            height={64}
-            style={{ margin: 10 }}
-          />
-        </Tooltip>
-        <Tooltip title="CSS">
-          <img src="./css.svg" width={64} height={64} style={{ margin: 10 }} />
-        </Tooltip>
-        <Tooltip title="Tailwind">
-          <img
-            src="./tailwindcss.svg"
-            width={64}
-            height={64}
-            style={{ margin: 10 }}
-          />
-        </Tooltip>
-        <Tooltip title="Javascript">
-          <img
-            src="./javascript.svg"
-            width={64}
-            height={64}
-            style={{ margin: 10 }}
-          />
-        </Tooltip>
-        <Tooltip title="NodeJs">
-          <img
-            src="./nodejs.svg"
-            width={64}
-            height={64}
-            style={{ margin: 10 }}
-          />
-        </Tooltip>
-        <Tooltip title="React">
-          <img
-            src="./react.svg"
-            width={64}
-            height={64}
-            style={{ margin: 10 }}
-          />
-        </Tooltip>
-        <Tooltip title="Vue.js">
-          <img src="./vue.svg" width={64} height={64} style={{ margin: 10 }} />
-        </Tooltip>
-        <Tooltip title="JAVA">
-          <img src="./java.svg" width={64} height={64} style={{ margin: 10 }} />
-        </Tooltip>
-        <Tooltip title="Kotlin">
-          <img
-            src="./kotlin.svg"
-            width={64}
-            height={64}
-            style={{ margin: 10 }}
-          />
-        </Tooltip>
-        <Tooltip title="MySql">
-          <img
-            src="./mysql.svg"
-            width={64}
-            height={64}
-            style={{ margin: 10 }}
-          />
-        </Tooltip>
-        <Tooltip title="SQLserver">
-          <img
-            src="./sql-server.svg"
-            width={64}
-            height={64}
-            style={{ margin: 10 }}
-          />
-        </Tooltip>
-        <Tooltip title="MongoDB">
-          <img
-            src="./mongodb.svg"
-            width={64}
-            height={64}
-            style={{ margin: 10 }}
-          />
-        </Tooltip>
-        <Tooltip title="Firebase">
-          <img
-            src="./firebase.svg"
-            width={64}
-            height={64}
-            style={{ margin: 10 }}
-          />
-        </Tooltip>
+        {skills.map((skill, index) => (
+          <Tooltip key={index} title={skill.title}>
+            <img
+              src={skill.imgSrc}
+              width={64}
+              height={64}
+              style={{ margin: 10 }}
+            />
+          </Tooltip>
+        ))}
       </div>
     </div>
   );

@@ -44,14 +44,20 @@ function Cards() {
       titleEs: "Lista de tareas",
       titleEn: "To Do List",
       image: "/todo-list.jpg",
-      technologies: ["React", "JavaScript", "CSS", "Tailwind CSS", "Material UI"],
+      technologies: [
+        "React",
+        "JavaScript",
+        "CSS",
+        "Tailwind CSS",
+        "Material UI",
+      ],
       descriptionEs:
         "Aplicación web que permite crear una lista de tareas, con la posibilidad de ser filtradas por estados.",
       descriptionEn:
         "Web application that allows you to create a list of tasks, with the possibility of filtering them by status.",
       url: "https://todo-list-4bhu.vercel.app/",
     },
-   {
+    {
       titleEs: "Rick & Morty",
       titleEn: "Rick & Morty",
       image: "/rick&morti.jpg",
@@ -75,7 +81,14 @@ function Cards() {
       titleEs: "ORTMedic",
       titleEn: "ORTMedic",
       image: "/ortMedic.jpeg",
-      technologies: ["VueJS", "JavaScript", "NodeJS", "CSS", "Boostrap", "MongoDB"],
+      technologies: [
+        "VueJS",
+        "JavaScript",
+        "NodeJS",
+        "CSS",
+        "Boostrap",
+        "MongoDB",
+      ],
       descriptionEs:
         "Página web desarrollada para una clínica médica, con registro de usuarios y médicos, brinda agenda para asignación de turnos en ambos perfiles.",
       descriptionEn:
@@ -109,7 +122,6 @@ function Cards() {
     window.open(url, "_blank");
   };
 
-  
   return (
     <>
       <h2>{selectedLanguage === "es" ? "Proyectos" : "Projects"}</h2>
@@ -123,8 +135,8 @@ function Cards() {
         {projects.map((project, index) => (
           <Card
             key={index}
-            sx={{ maxWidth: 250 }}
-            style={{ backgroundColor :"white" , cursor:"pointer" }}
+            sx={{ maxWidth: 280 }}
+            style={{ backgroundColor: "white", cursor: "pointer" }}
             className="card-zoom"
           >
             <CardActionArea>
@@ -134,7 +146,12 @@ function Cards() {
                 image={project.image}
                 alt={project.titleEn}
               />
-              <Stack direction="row" spacing={1} gap={1} className="tecnologias">
+              <Stack
+                direction="row"
+                spacing={1}
+                gap={1}
+                className="tecnologias"
+              >
                 {project.technologies.map((tech, index) => (
                   <Chip
                     key={index}
@@ -143,7 +160,7 @@ function Cards() {
                     variant="outlined"
                     size="small"
                     className="pillTecnologias"
-                  style={{ fontFamily: "'Tektur', sans-serif" }}
+                    style={{ fontFamily: "'Tektur', sans-serif" }}
                   />
                 ))}
               </Stack>
@@ -155,12 +172,12 @@ function Cards() {
                 component="div"
                 style={{ fontFamily: "'Tektur', sans-serif" }}
               >
-                {selectedLanguage == "es" ? project.titleEs : project.titleEn }
+                {selectedLanguage == "es" ? project.titleEs : project.titleEn}
               </Typography>
               <Typography
                 variant="body2"
                 color="text.secondary"
-                style={{ fontFamily: "'Tektur'" , minHeight:"120px"}}
+                style={{ fontFamily: "'Tektur'", minHeight: "120px" }}
               >
                 {selectedLanguage === "es"
                   ? project.descriptionEs
@@ -173,35 +190,39 @@ function Cards() {
                 justifyContent: "center",
                 alignItems: "center",
                 marginBottom: "10px",
-       
               }}
-            > 
+            >
               <Button
-                
                 variant="outlined"
                 onClick={() => {
                   goToPage(project.url);
                 }}
               >
-                {selectedLanguage === "es" ? "WEB" : "WEB"}
+                {project.titleEs === "ORTMedic" ||
+                project.titleEn === "ORTMedic" ||
+                project.titleEs === "SafePet" ||
+                project.titleEn === "SafePet"
+                  ? "GitHub"
+                  : "WEB"}
               </Button>
-              </Box>
+            </Box>
             {/* Renderizo el boton de imagenes solo para el proyecto de SafePet*/}
-            {(project.titleEs === "SafePet" || project.titleEn === "SafePet") && (
-              
-                <Button
-                style = {{marginTop:"px"}}
-                  variant="outlined"
-                  onClick={() => setModalShow(true)}
-                >
-                  {selectedLanguage === "es" ? "IMÁGENES" : "IMAGES"}
-                </Button>
-             
+            {(project.titleEs === "SafePet" ||
+              project.titleEn === "SafePet") && (
+              <Button
+                style={{ marginTop: "px" }}
+                variant="outlined"
+                onClick={() => setModalShow(true)}
+              >
+                {selectedLanguage === "es" ? "IMÁGENES" : "IMAGES"}
+              </Button>
             )}
             {/* Renderizar el modal de imagenes solo para SafePet */}
-            {(project.titleEs === "SafePet" || project.titleEn === "SafePet")  && (
+            {(project.titleEs === "SafePet" ||
+              project.titleEn === "SafePet") && (
               <MyVerticallyCenteredModal
                 show={modalShow}
+                title = "APP SafePet"
                 images={project.images}
                 onHide={() => setModalShow(false)}
               />
